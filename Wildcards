@@ -2,16 +2,20 @@ Percent ( % ) in a wildcard
 The percent symbol is used in SQL to match any character (including an underscore) zero or more times.
 
 Asterisk ( * ) in a wildcard
-The asterisk in a wildcard matches any character zero or more times. For example, "comp*" matches anything beginning with "comp," which means "comp," "complete," and "computer" are all matched.
+The asterisk in a wildcard matches any character zero or more times. For example, "comp*" matches anything beginning with "comp," which means "comp," "complete," 
+and "computer" are all matched.
 
 Question mark ( ? ) in a wildcard
-A question mark matches a single character once. For example, "c?mp" matches "camp" and "comp." The question mark can also be used more than once. For example, "c??p" would match both of the above examples. In MS-DOS and the Windows command line, the question mark can also match any trailing question mark zero or one time. For example, "co??" would match all of the above matches, but because they are trailing question marks would also match "cop" even though it's not four characters.
+A question mark matches a single character once. For example, "c?mp" matches "camp" and "comp." The question mark can also be used more than once. For example, 
+"c??p" would match both of the above examples. In MS-DOS and the Windows command line, the question mark can also match any trailing question mark zero or one time. 
+For example, "co??" would match all of the above matches, but because they are trailing question marks would also match "cop" even though it's not four characters.
 
 Tip
 With regular expressions, a period ( . ) is a wildcard for a single character.
 
 Open and close brackets ( [ ] ) in a wildcard
-With Unix shells, Windows PowerShell, and programming languages that support regular expressions, the open and close bracket wildcards match a single character in a range. For example, [a-z] matches any character "a" through "z," which means anything not in that range, like a number, would not be matched.
+With Unix shells, Windows PowerShell, and programming languages that support regular expressions, the open and close bracket wildcards match a single character 
+in a range. For example, [a-z] matches any character "a" through "z," which means anything not in that range, like a number, would not be matched.
 
 Tip
 Adding an exclamation mark in places that support the brackets as a wildcard tell the program NOT to match.
@@ -36,31 +40,40 @@ del comp*.txt
 Deleting files in MS-DOS that begin with comp and end with a ".txt" extension.
 
 Find and replace using wildcard examples
-Find and replace features that support wildcards, like Microsoft Word, that allow searches to contain wildcards. Below are examples of how to use wildcards in Find and Replace. Remember that for any of these to work; you must have the Use wildcards option checked in Find and Replace.
+Find and replace features that support wildcards, like Microsoft Word, that allow searches to contain wildcards. Below are examples of how to use wildcards 
+in Find and Replace. Remember that for any of these to work; you must have the Use wildcards option checked in Find and Replace.
 
 comp*r
-Match anything starting with "comp" and ending with "r." In other words, this would find "computer" and "compiler" in your document. However, remember that "*" is greedy, meaning everything is matched up to "r." In other words, if there's an "r" anywhere after comp, it's matched. So, "computer your" is matched since it begins with "comp" and "your" ends with "r."
+Match anything starting with "comp" and ending with "r." In other words, this would find "computer" and "compiler" in your document. 
+However, remember that "*" is greedy, meaning everything is matched up to "r." In other words, if there's an "r" anywhere after comp, it's matched. 
+So, "computer your" is matched since it begins with "comp" and "your" ends with "r."
 
 d[eo]ll
-Using brackets, indicate to Microsoft Word to look for any of the letters contained in the brackets. In this example, "e" or "o" are matched, so find would match either "dell" or "doll."
+Using brackets, indicate to Microsoft Word to look for any of the letters contained in the brackets. In this example, "e" or "o" are matched, 
+so find would match either "dell" or "doll."
 
 d[o-u]ll
-The brackets can also be used to search for a range of characters. In the above example, this range includes the letters from "o" to "u." This range matches words like "doll" and "dull" in your document.
+The brackets can also be used to search for a range of characters. In the above example, this range includes the letters from "o" to "u." 
+This range matches words like "doll" and "dull" in your document.
 
 d[!e]ll
-Using an exclamation mark in the brackets tells the Find not to match any of the characters in the bracket. In the above example, this wildcard tells the Find not to match "dell," but to match anything else beginning with "d" and ending in 'll.'
+Using an exclamation mark in the brackets tells the Find not to match any of the characters in the bracket. 
+In the above example, this wildcard tells the Find not to match "dell," but to match anything else beginning with "d" and ending in 'll.'
 
 d?ll
-The question mark only matches one character. In the above example, this would match "dall," "dell," "dill," "doll," and "dull" since they contain a "d" at the first and "ll" at the end.
+The question mark only matches one character. In the above example, this would match "dall," "dell," "dill," "doll," and "dull" since they contain 
+a "d" at the first and "ll" at the end.
 
 se{2}d
 Using a curly bracket in your Find looks for the number of characters preceding the brackets. In the above example, Find matches "seed," but not match "sed."
 
 <(comp)
-A find starting with a less than and containing text in parentheses tells Find to look for any word beginning with whatever is contained in the parentheses. In the example above, this would find any words beginning with "comp."
+A find starting with a less than and containing text in parentheses tells Find to look for any word beginning with whatever is contained in the parentheses. 
+In the example above, this would find any words beginning with "comp."
 
 (er)>
-A string starting with characters in a parenthesis and ending a greater than tells Find to look for any word ending with whatever is contained in the parentheses. In the example above, this would find any words ending with "er."
+A string starting with characters in a parenthesis and ending a greater than tells Find to look for any word ending with whatever is contained in the parentheses. 
+In the example above, this would find any words ending with "er."
 
 Linux and Unix wildcard examples
 ls comp*
